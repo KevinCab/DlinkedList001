@@ -103,6 +103,21 @@ public class DlinkedList {
         }
 	
 	
+	public String ImprimirReves(){
+		String lista="";
+		Nodo aux=head;
+		while(aux.getSiguiente()!=null){
+			aux=aux.getSiguiente();
+		}
+		lista+=aux.getDato()+"\n";
+		while(aux.getAnterior()!=null){
+			lista+=aux.getAnterior().getDato()+"\n";
+			aux=aux.getAnterior();
+		}
+		lista+="Tamanio de Lista: "+size;
+		return lista;	
+	}
+	
 	
 	@Override
 	public String toString() {
